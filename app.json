@@ -1,0 +1,25 @@
+{
+  "name": "bounceback",
+  "description": "connect from peered vpcs via pgbouncer to private spaces dbs",
+  "keywords": [
+    "private-spaces",
+  ],
+  "repository": "https://github.com/heroku/bounceback",
+  "env": {
+    "BOUNCEBACK_URL": {
+      "description": "url in peered vpcs to receive cred updates on",
+    },
+  },
+  "formation": {
+    "pgbouncer": {
+      "quantity": 1,
+      "size": "Private-S"
+    },
+
+  },
+  "buildpacks": [
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-pgbouncer.git"
+    }
+  ]
+}
