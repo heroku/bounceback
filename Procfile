@@ -1,1 +1,1 @@
-pgbouncer: bin/start-pbgouncer
+pgbouncer: bin/start-pgbouncer
