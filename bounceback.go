@@ -38,6 +38,7 @@ func pgbouncerUrls() map[string]string {
 			urls[kv[0]] = kv[1]
 		}
 	}
+	return urls
 }
 
 func bouncebackUrls() []string {
