@@ -13,7 +13,7 @@ This pgbouncer instance is accessible from VPCs peered to your space.
 By setting the BOUNCEBACK_URLS config var, you may configure a comma separated list of endpoints that reside inside your peered VPC that accept a json post anytime the IP address or credentials
 for the pgbouncer change, which is every time the web dyno running pgbouncer is restarted.
 
-The endpoints will receive a payload with the correct _PGBOUNCER url for each database attached to the app.
+The endpoints will receive a payload with the correct _PGBOUNCER url for each database attached to the app, for example:
 
 ```
 {
