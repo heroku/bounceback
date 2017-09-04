@@ -4,6 +4,7 @@ import (
 	"os"
 	"log"
 	"net/http"
+	"strings"
 )
 
 func main()  {
@@ -13,11 +14,7 @@ func main()  {
 		log.Fatal("$PORT must be set")
 	}
 
-	_, set := os.LookupEnv("BOUNCEBACK_URLS")
 
-	if ! set {
-		log.Println("fn=main at=no-bounceback-urls")
-	}
 
 	http.ListenAndServe(":" + port, handler())
 }
@@ -25,6 +22,31 @@ func main()  {
 
 func handler() http.HandlerFunc {
 	return func(resp http.ResponseWriter, req *http.Request){
-		resp.Write([]byte("testing 1 2 3"))
+		for k, _ := range pgbouncerUrls() {
+			resp.Write([]byte(k))
+		}
 	}
+}
+
+
+func pgbouncerUrls() map[string]string {
+	urls := map[string]string{}
+	envs := os.Environ()
+	for _, env := range envs {
+		kv := strings.SplitN(env, "=", 1)
+		if strings.HasSuffix(kv[0], "_PGBOUNCER"){
+			urls[kv[0]] = kv[1]
+		}
+	}
+}
+
+func bouncebackUrls() []string {
+
+	urlz, set := os.LookupEnv("BOUNCEBACK_URLS")
+
+	if ! set {
+		log.Println("fn=main at=no-bounceback-urls")
+	}
+
+	return strings.Split(urlz,",")
 }
