@@ -1,6 +1,6 @@
 {
   "name": "bounceback",
-  "description": "connect from peered vpcs via pgbouncer to private spaces dbs",
+  "description": "connect from peered vpcs via pgbouncer to private spaces dbs.",
   "keywords": [
     "private-spaces"
   ],
