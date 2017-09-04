@@ -23,6 +23,15 @@ func main() {
 
 func handler() http.HandlerFunc {
 	return func(resp http.ResponseWriter, req *http.Request) {
+		if req.Method == "POST" && req.URL.Path == "/self-notify" {
+			defer req.Body.Close()
+			buf := new(bytes.Buffer)
+			buf.ReadFrom(req.Body)
+			s := buf.String()
+			log.Printf("at=self-notify data=%q", s)
+			return
+		}
+		
 		for k, _ := range pgbouncerUrls() {
 			resp.Write([]byte(k))
 		}
