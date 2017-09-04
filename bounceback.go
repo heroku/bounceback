@@ -19,7 +19,7 @@ func main()  {
 		log.Println("fn=main at=no-bounceback-urls")
 	}
 
-	_ := http.ListenAndServe(":" + port, handler())
+	http.ListenAndServe(":" + port, handler())
 }
 
 
