@@ -7,7 +7,7 @@ connect to private spaces heroku postgres databases from peered vpcs
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/heroku/bounceback)
 
 
-Deploying this app will create a single web dyno in your space that also exposes a pgbouncer/stunnes server on your dyno private network
+Deploying this app will create a single web dyno in your space that also exposes a pgbouncer/stunnel server on your dyno private network
 this pgbouncer instance is accessible from VPCs peered to your space.
 
 You may configure a comma seperated list of endpoints that reside inside your peered VPC that accept a json post anytime the IP address or credentials
