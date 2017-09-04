@@ -47,6 +47,7 @@ func bouncebackUrls() []string {
 
 	if !set {
 		log.Println("fn=main at=no-bounceback-urls")
+		return []string{}
 	}
 
 	return strings.Split(urlz, ",")
