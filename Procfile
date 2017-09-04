@@ -1,1 +1,1 @@
-web: bin/start-pgbouncer bounceback
+web: bin/start bounceback
