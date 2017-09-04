@@ -65,7 +65,7 @@ run-pgbouncer() {
 config-gen() {
   # Generate config files
   at config-gen-start
-  source bin/gen-pgbouncer-conf.sh
+  source bin/bounceback-gen-pgbouncer-conf.sh
   at config-gen-end
 
   # Overwrite config vars with pgbouncer targets
