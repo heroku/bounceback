@@ -37,6 +37,8 @@ func pgbouncerUrls() map[string]string {
 		kv := strings.SplitN(env, "=", 1)
 		if strings.HasSuffix(kv[0], "_PGBOUNCER"){
 			urls[kv[0]] = kv[1]
+		} else {
+			log.Println(kv[0])
 		}
 	}
 	return urls
