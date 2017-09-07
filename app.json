@@ -11,7 +11,7 @@
     }
   },
   "formation": {
-    "web": {
+    "bounceback": {
       "quantity": 1,
       "size": "Private-S"
     }

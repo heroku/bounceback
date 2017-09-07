@@ -1,1 +1,1 @@
-web: bin/start bounceback
+bounceback: bin/start bounceback
